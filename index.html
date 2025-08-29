@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bling and Beyond by Iman - Luxury Jewelry Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        gold: '#FFD700',
+                        rose: '#E91E63',
+                        platinum: '#E5E4E2'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'fadeInUp': 'fadeInUp 0.8s ease-out',
+                        'slideInLeft': 'slideInLeft 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.8s ease-out',
+                        'scale': 'scale 0.3s ease-in-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(93, 92, 222, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(93, 92, 222, 0.8)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scale: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.05)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #FFD700, #E91E63, #5D5CDE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .jewelry-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        }
+        
+        .jewelry-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark .jewelry-card {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+        }
+        
+        .shimmer-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shimmer-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-gem text-2xl text-primary mr-3 animate-glow"></i>
+                    <span class="text-xl font-bold gradient-text">Bling and Beyond by Iman</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                    <a href="#collections" class="hover:text-primary transition-colors">Collections</a>
+                    <a href="#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-rose/20 to-gold/20"></div>
+        <div class="absolute inset-0">
+            <div class="animate-float absolute top-20 left-10 w-4 h-4 bg-gold rounded-full opacity-60"></div>
+            <div class="animate-float absolute top-40 right-20 w-6 h-6 bg-rose rounded-full opacity-40" style="animation-delay: 1s;"></div>
+            <div class="animate-float absolute bottom-40 left-20 w-8 h-8 bg-primary rounded-full opacity-50" style="animation-delay: 2s;"></div>
+            <div class="animate-float absolute bottom-20 right-10 w-5 h-5 bg-platinum rounded-full opacity-70" style="animation-delay: 3s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInLeft">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="gradient-text">Bling</span><br>
+                        <span class="text-gray-800 dark:text-white">& Beyond</span><br>
+                        <span class="text-3xl md:text-4xl gradient-text">by Iman</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Discover our exquisite collection of luxury jewelry and designer eyewear. 
+                        Each piece tells a story of elegance, craftsmanship, and timeless beauty.
+                    </p>
+                    <button class="bg-gradient-to-r from-primary to-rose text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 animate-glow">
+                        Explore Collection
+                    </button>
+                </div>
+                <div class="animate-slideInRight">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-br from-gold/30 to-primary/30 rounded-3xl shimmer-overlay">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&q=80" 
+                                 alt="Luxury Jewelry" 
+                                 class="w-full h-full object-cover rounded-3xl">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-rose to-gold rounded-full animate-float"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Our Collections</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Handpicked jewelry and eyewear for every occasion</p>
+            </div>
+
+            <!-- Category Navigation -->
+            <div class="flex flex-wrap justify-center mb-12 space-x-4 space-y-2">
+                <button class="category-btn active bg-primary text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105" data-category="all">All</button>
+                <button class="category-btn bg-white dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 hover:bg-primary hover:text-white" data-category="rings">Rings</button>
+                <button class="category-btn bg-white dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 hover:bg-primary hover:text-white" data-category="necklaces">Necklaces</button>
+                <button class="category-btn bg-white dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 hover:bg-primary hover:text-white" data-category="earrings">Earrings</button>
+                <button class="category-btn bg-white dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 hover:bg-primary hover:text-white" data-category="bracelets">Bracelets</button>
+                <button class="category-btn bg-white dark:bg-gray-700 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 hover:bg-primary hover:text-white" data-category="eyewear">Eyewear</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Rings -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="rings">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300&q=80" 
+                             alt="Diamond Ring" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Diamond Solitaire Ring</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Elegant diamond solitaire with platinum setting</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Necklaces -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="necklaces">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300&q=80" 
+                             alt="Pearl Necklace" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Pearl Strand Necklace</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Classic freshwater pearl necklace</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earrings -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="earrings">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=300&q=80" 
+                             alt="Diamond Earrings" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Diamond Stud Earrings</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Brilliant cut diamond studs in white gold</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bracelets -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="bracelets">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611955167811-4711904bb9f8?w=300&q=80" 
+                             alt="Gold Bracelet" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gold Chain Bracelet</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Delicate 18k gold chain bracelet</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eyewear -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="eyewear">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=300&q=80" 
+                             alt="Designer Glasses" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Designer Frames</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Premium titanium frames with crystal accents</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More items for each category -->
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="rings">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=300&q=80" 
+                             alt="Emerald Ring" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Emerald Cocktail Ring</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Stunning emerald with diamond halo</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="necklaces">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=300&q=80" 
+                             alt="Gold Pendant" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Gold Heart Pendant</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Romantic heart pendant in rose gold</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jewelry-card product-item rounded-2xl overflow-hidden shadow-lg" data-category="eyewear">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556306535-38febf6782e7?w=300&q=80" 
+                             alt="Sunglasses" 
+                             class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Luxury Sunglasses</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Premium UV protection with style</p>
+                        <div class="flex items-center mt-4">
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold mr-1"></i>
+                            <i class="fas fa-star text-gold"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Why Choose Bling and Beyond</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Excellence in every detail</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-8 rounded-2xl glass-effect animate-fadeInUp">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gold to-rose rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Certified Quality</h3>
+                    <p class="text-gray-600 dark:text-gray-300">All our jewelry comes with authenticity certificates and quality guarantees.</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl glass-effect animate-fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-gold rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Custom Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Create unique pieces tailored to your personal style and preferences.</p>
+                </div>
+                
+                <div class="text-center p-8 rounded-2xl glass-effect animate-fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-gradient-to-br from-rose to-primary rounded-full flex items-center justify-center mx-auto mb-6 animate-glow">
+                        <i class="fas fa-shipping-fast text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Secure Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Safe and insured shipping with tracking for all your precious purchases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInLeft">
+                    <h2 class="text-4xl font-bold mb-6 gradient-text">About Iman</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        With over a decade of experience in luxury jewelry and eyewear, Iman brings passion, 
+                        expertise, and an eye for exceptional quality to every piece in our collection. 
+                        Each item is carefully selected or custom-crafted to ensure it meets our exacting standards.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        From timeless classics to contemporary designs, we believe that jewelry should tell your story 
+                        and reflect your unique personality. Let us help you find the perfect piece for life's 
+                        most precious moments.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold gradient-text">10+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-300">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold gradient-text">1000+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-300">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold gradient-text">500+</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-300">Unique Pieces</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="animate-slideInRight">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1571019613914-85f342c6a11e?w=500&q=80" 
+                             alt="Jewelry Workshop" 
+                             class="w-full h-96 object-cover rounded-3xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6 gradient-text">Get in Touch</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-12">
+                Ready to find your perfect piece? We'd love to help you discover something extraordinary.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="p-6 rounded-2xl glass-effect animate-fadeInUp">
+                    <i class="fas fa-phone text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-effect animate-fadeInUp" style="animation-delay: 0.2s;">
+                    <i class="fas fa-envelope text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-600 dark:text-gray-300">hello@blingandbeyond.com</p>
+                </div>
+                <div class="p-6 rounded-2xl glass-effect animate-fadeInUp" style="animation-delay: 0.4s;">
+                    <i class="fas fa-map-marker-alt text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
+                    <p class="text-gray-600 dark:text-gray-300">123 Luxury Ave, Jewelry District</p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-rose rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-rose rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gradient-to-br from-primary to-rose rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-6">
+                    <i class="fas fa-gem text-2xl text-primary mr-3 animate-glow"></i>
+                    <span class="text-2xl font-bold gradient-text">Bling and Beyond by Iman</span>
+                </div>
+                <p class="text-gray-400 mb-6">Where elegance meets craftsmanship</p>
+                <p class="text-gray-500 text-sm">© 2024 Bling and Beyond by Iman. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Category filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const productItems = document.querySelectorAll('.product-item');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                // Update active button
+                categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-white'));
+                button.classList.add('active', 'bg-primary', 'text-white');
+                
+                // Filter products
+                productItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (category === 'all' || itemCategory === category) {
+                        item.style.display = 'block';
+                        item.classList.add('animate-fadeInUp');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animatable elements
+        document.querySelectorAll('.jewelry-card, .glass-effect').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
